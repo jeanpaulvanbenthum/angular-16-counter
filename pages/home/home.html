@@ -1,3 +1,39 @@
 <div ng-controller='HomeCtrl'>	
-	<!-- TODO: place directive call here -->
+    <div class="row">
+        <div class="col-xs-4">
+            <h3>Counter 1</h3>
+            <div class="input-group">
+                <div fs-counter value="quantity1" min="0"></div>
+            </div>
+            <h5>Attributes used:</h5>
+            <ul>
+                <li>min: 0</li>
+            </ul>
+        </div>
+        <div class="col-xs-4">
+            <h3>Counter 2</h3>
+            <div class="input-group">
+                <div fs-counter value="quantity2" min="1" max="30" step="3" editable></div>
+            </div>
+            <h5>Attributes used:</h5>
+            <ul>
+                <li>min: 1</li>
+                <li>max: 30</li>
+                <li>step: 3</li>
+                <li>editable</li>
+            </ul>          
+        </div>
+        <div class="col-xs-4">
+            <h3>Counter 1</h3>
+            <div class="input-group">
+                <div fs-counter value="quantity3" min="0" max="100" step="10"></div>
+            </div>
+            <h5>Attributes used:</h5>
+            <ul>
+                <li>min: 0</li>
+                <li>max: 100</li>
+                <li>step: 10</li>
+            </ul>
+        </div>
+    </div>
 </div>
