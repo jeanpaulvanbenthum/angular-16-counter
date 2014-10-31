@@ -29,7 +29,8 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', [ functi
         scope: {
             value: "=value"
         },
-        template: "<div class=\"input-group\"><span class=\"input-group-btn\" ng-click=\"minus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-minus\"></span></button></span><input type=\"text\" class=\"form-control text-center\" ng-model=\"value\" ng-change=\"changed()\"><span class=\"input-group-btn\" ng-click=\"plus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span></button></span></div>",
+        template: "<div class=\"fs-counter input-group\" ng-class=\"addclass\" ng-style=\"width\"><span class=\"input-group-btn\" ng-click=\"minus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-minus\"></span></button></span><input type=\"text\" class=\"form-control text-center\" ng-model=\"value\" ng-change=\"changed()\" ng-readonly=\"readonly\"><span class=\"input-group-btn\" ng-click=\"plus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span></button></span></div>",
+        replace: true,
         link: function(scope, element, attributes) {
             var max, min, setValue, step;
             max = void 0;
@@ -42,14 +43,20 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', [ functi
             min = (angular.isUndefined(attributes.min) ? null : parseInt(attributes.min));
             max = (angular.isUndefined(attributes.max) ? null : parseInt(attributes.max));
             step = (angular.isUndefined(attributes.step) ? 1 : parseInt(attributes.step));
-            element.addClass("counter-container");
             scope.readonly = (angular.isUndefined(attributes.editable) ? true : false);
+            scope.addclass = (angular.isUndefined(attributes.addclass) ? null : attributes.addclass);
+            scope.width = (angular.isUndefined(attributes.width) ? {} : {width:attributes.width});
 
             /**
               Sets the value as an integer.
               */
             setValue = function(val) {
-                scope.value = parseInt(val);
+                var val = parseInt(val);
+                if ((!min && !max) || (min && max && val >= min && val <= max)) {
+                    scope.value = val;
+                    return;
+                }
+                scope.value = min && min > val ? min : max && max < val ? max : val;
             };
             setValue(scope.value);
 

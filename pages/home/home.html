@@ -1,39 +1,78 @@
 <div ng-controller='HomeCtrl'>	
-    <div class="row">
-        <div class="col-xs-4">
-            <h3>Counter 1</h3>
-            <div class="input-group">
-                <div fs-counter value="quantity1" min="0"></div>
-            </div>
-            <h5>Attributes used:</h5>
-            <ul>
-                <li>min: 0</li>
-            </ul>
-        </div>
-        <div class="col-xs-4">
-            <h3>Counter 2</h3>
-            <div class="input-group">
-                <div fs-counter value="quantity2" min="1" max="30" step="3" editable></div>
-            </div>
-            <h5>Attributes used:</h5>
-            <ul>
-                <li>min: 1</li>
-                <li>max: 30</li>
-                <li>step: 3</li>
-                <li>editable</li>
-            </ul>          
-        </div>
-        <div class="col-xs-4">
-            <h3>Counter 1</h3>
-            <div class="input-group">
-                <div fs-counter value="quantity3" min="0" max="100" step="10"></div>
-            </div>
-            <h5>Attributes used:</h5>
-            <ul>
-                <li>min: 0</li>
-                <li>max: 100</li>
-                <li>step: 10</li>
-            </ul>
-        </div>
-    </div>
+    <h2>Counter Directive</h2>
+
+    <p>Use the plus/minus buttons to increment/decrement the value of the field.</p>
+
+
+    <h3>Attributes:</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>min/data-min</td>
+                <td>null</td>
+                <td>A minimum value, never to go below.</td>
+            </tr>
+            <tr>
+                <td>max/data-min</td>
+                <td>null</td>
+                <td>A maximum value, never to go above.</td>
+            </tr>
+            <tr>
+                <td>step/data-step</td>
+                <td>1</td>
+                <td>How much to increment/decrement by.</td>
+            </tr>
+            <tr>
+                <td>addclass/data-addclass</td>
+                <td>null</td>
+                <td>Add a class to the container.</td>
+            </tr>
+            <tr>
+                <td>width/data-width</td>
+                <td>null</td>
+                <td>Set the width of the input field.</td>
+            </tr>
+            <tr>
+                <td>editable/data-editable</td>
+                <td>false</td>
+                <td>Whether the field is readyonly or not. By default, it's readonly.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h3>Counter 1</h3>
+    <h4>Attributes used:</h4>
+    <ul>
+        <li>min: 0</li>
+    </ul>
+    <div fs-counter value="value[0]" data-min="0" data-addclass="col-xs-2"></div>
+
+
+    <h3>Counter 2</h3>
+    <h4>Attributes used:</h4>
+    <ul>
+        <li>min: 1</li>
+        <li>max: 30</li>
+        <li>step: 3</li>
+        <li>editable</li>
+    </ul>
+    <div fs-counter value="value[1]" data-min="1" data-max="30" data-step="3" data-width="50%" data-editable></div>
+
+
+    <h3>Counter 3</h3>
+    <h4>Attributes used:</h4>
+    <ul>
+        <li>min: 0</li>
+        <li>max: 100</li>
+        <li>step: 10</li>
+    </ul>
+    <div fs-counter value="value[2]" data-min="0" data-max="100" data-step="10" data-width="130px"></div>
 </div>
