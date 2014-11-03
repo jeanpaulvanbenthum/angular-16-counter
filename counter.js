@@ -32,50 +32,58 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', [ functi
         template: "<div class=\"fs-counter input-group\" ng-class=\"addclass\" ng-style=\"width\"><span class=\"input-group-btn\" ng-click=\"minus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-minus\"></span></button></span><input type=\"text\" class=\"form-control text-center\" ng-model=\"value\" ng-change=\"changed()\" ng-readonly=\"readonly\"><span class=\"input-group-btn\" ng-click=\"plus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span></button></span></div>",
         replace: true,
         link: function(scope, element, attributes) {
-            var max, min, setValue, step;
+            var min = (angular.isUndefined(attributes.min) ? null : parseInt(attributes.min)),
+                max = (angular.isUndefined(attributes.max) ? null : parseInt(attributes.max)),
+                step = (angular.isUndefined(attributes.step) || parseInt(attributes.step) === 0 ? 1 : parseInt(attributes.step)),
+                setValue;
+
+            /**
+             * Confirm the value attribute exists on the element
+             */
             if (angular.isUndefined(scope.value)) {
                 throw "Missing the value attribute on the counter directive.";
             }
-            min = (angular.isUndefined(attributes.min) ? null : parseInt(attributes.min));
-            max = (angular.isUndefined(attributes.max) ? null : parseInt(attributes.max));
-            step = (angular.isUndefined(attributes.step) || parseInt(attributes.step) === 0 ? 1 : parseInt(attributes.step));
+
+            /**
+             * Set some scope wide properties
+             */
             scope.readonly = (angular.isUndefined(attributes.editable) ? true : false);
             scope.addclass = (angular.isUndefined(attributes.addclass) ? null : attributes.addclass);
             scope.width = (angular.isUndefined(attributes.width) ? {} : {width:attributes.width});
 
             /**
-              Sets the value as an integer.
-              */
+             * Sets the value as an integer.
+             */
             setValue = function(val) {
                 var val = parseInt(val);
                 if ((!min && !max) || (min && max && val >= min && val <= max)) {
-                    scope.value = val;
-                    return;
+                    return val;
                 }
-                scope.value = min && min > val ? min : max && max < val ? max : val;
+                val = min && min > val ? min : max && max < val ? max : val;
+                return val;
             };
-            setValue(scope.value);
+            scope.value = setValue(scope.value);
 
             /**
-              Decrement the value and make sure we stay within the limits, if defined.
-              */
+             * Decrement the value and make sure we stay within the limits, if defined.
+             */
             scope.minus = function() {
                 if (min && (scope.value <= min || scope.value - step <= min) || min === 0 && scope.value < 1) {
-                    setValue(min);
-                    return false;
+                    scope.value = setValue(min);
+                    return;
                 }
-                setValue(scope.value - step);
+                scope.value = setValue(scope.value - step);
             };
 
             /**
-              Increment the value and make sure we stay within the limits, if defined.
-              */
+             * Increment the value and make sure we stay within the limits, if defined.
+             */
             scope.plus = function() {
                 if (max && (scope.value >= max || scope.value + step >= max)) {
-                    setValue(max);
-                    return false;
+                    scope.value = setValue(max);
+                    return;
                 }
-                setValue(scope.value + step);
+                scope.value = setValue(scope.value + step);
             };
 
             /**
@@ -85,22 +93,22 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', [ functi
               */
             scope.changed = function() {
                 if (!scope.value) {
-                    setValue(0);
+                    scope.value = setValue(0);
                 }
                 if (/[0-9]/.test(scope.value)) {
-                    setValue(scope.value);
+                    scope.value = setValue(scope.value);
                 } else {
-                    setValue(scope.min);
+                    scope.value = setValue(scope.min);
                 }
                 if (min && (scope.value <= min || scope.value - step <= min)) {
-                    setValue(min);
-                    return false;
+                    scope.value = setValue(min);
+                    return;
                 }
                 if (max && (scope.value >= max || scope.value + step >= max)) {
-                    setValue(max);
-                    return false;
+                    scope.value = setValue(max);
+                    return;
                 }
-                setValue(scope.value);
+                scope.value =  setValue(scope.value);
             };
         }
     };
