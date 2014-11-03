@@ -51,7 +51,7 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', ['$timeo
              * i.e. returns NaN, then the min value or 0 will be used instead.
              */
             setValue = function(val) {
-                var parsedVal = parseInt(parsedVal);
+                var parsedVal = parseInt(val);
                 if (!isNaN(parsedVal)) {
                     if (min !== undefined && min > parsedVal) {
                         parsedVal = min;
