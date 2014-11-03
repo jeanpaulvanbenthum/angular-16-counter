@@ -37,7 +37,14 @@ https://github.com/Firestitch/angular-counter/blob/master/counter.js
 | editable/data-editable | false   | Whether the field is readyonly or not. By default, it's readonly. |
 
 ```html
-
+&lt;div fs-counter value="someValue"
+    data-min="0"
+    data-max="100"
+    data-step="1"
+    data-addclass="someClass"
+    data-width="130px"
+    data-editable
+    &gt;&lt;/div&gt;
 ```
 
 ## Development
