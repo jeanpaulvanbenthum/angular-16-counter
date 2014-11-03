@@ -1,32 +1,32 @@
 {
-	"name": "angular-counter",
-	"version": "1.0.0",
-	"authors": [
-		"Adam Merrifield <macagp@gmail.com>"
-	],
-	"description": "AngularJS directive for incrementing a counter form input field",
-	"keywords": [
-		"angular",
-		"AngularJS",
-		"counter",
-		"input",
-		"field",
-		"increment"
-	],
-	"license": "MIT",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-		"angular":"~1.2.0",
-		"angular-animate":"~1.2.0",
-		"angular-sanitize":"~1.2.0",
-		"angular-touch":"~1.2.0"
-	},
-	"devDependencies": {
-	}
+    "name": "angular-counter",
+    "version": "1.0.0",
+    "authors": [
+        "Adam Merrifield <macagp@gmail.com>"
+    ],
+    "description": "AngularJS directive for incrementing a counter form input field",
+    "keywords": [
+        "angular",
+        "AngularJS",
+        "counter",
+        "input",
+        "field",
+        "increment"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular":"~1.2.0",
+        "angular-animate":"~1.2.0",
+        "angular-sanitize":"~1.2.0",
+        "angular-touch":"~1.2.0"
+    },
+    "devDependencies": {
+    }
 }
