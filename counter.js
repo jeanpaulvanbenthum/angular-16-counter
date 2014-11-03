@@ -5,6 +5,16 @@
 @param {Object} attrs REMEMBER: use snake-case when setting these on the partial! i.e. my-attr='1' NOT myAttr='1'
 
 @usage
+
+| Attribute              | Default | Description                                                       |
+| ---------------------- | ------- | ----------------------------------------------------------------- |
+| min/data-min           | null    | A minimum value, never to go below.                               |
+| max/data-min           | null    | A maximum value, never to go above.                               |
+| step/data-step         | 1       | How much to increment/decrement by.                               |
+| addclass/data-addclass | null    | Add a class to the container.                                     |
+| width/data-width       | null    | Set the width of the input field.                                 |
+| editable/data-editable | false   | Whether the field is readyonly or not. By default, it's readonly. |
+
 partial / html:
 <div fs-counter value="someValue"
     data-min="0"
