@@ -1,15 +1,13 @@
 # AngularJS directive for incrementing a counter form input field
 
-[TODO - brief summary]
+A directive for making a [plus/minus input](http://bootsnipp.com/snippets/featured/buttons-minus-and-plus-in-input) based on the work of [Maikel Daloo](http://maikeldaloo.com/post/angularjs-counter-directive).
 
 ## Demo
 http://Firestitch.github.io/angular-counter/
 
 ## Dependencies
 - required:
-	[TODO]
-- optional
-	[TODO]
+	Bootstrap for styling
 
 See `bower.json` and `index.html` in the `gh-pages` branch for a full list / more details
 
@@ -29,6 +27,18 @@ See the `gh-pages` branch, files `bower.json` and `index.html` for a full exampl
 See the `counter.js` file top comments for usage examples and documentation
 https://github.com/Firestitch/angular-counter/blob/master/counter.js
 
+| Attribute              | Default | Description                                                       |
+| ---------------------- | ------- | ----------------------------------------------------------------- |
+| min/data-min           | null    | A minimum value, never to go below.                               |
+| max/data-min           | null    | A maximum value, never to go above.                               |
+| step/data-step         | 1       | How much to increment/decrement by.                               |
+| addclass/data-addclass | null    | Add a class to the container.                                     |
+| width/data-width       | null    | Set the width of the input field.                                 |
+| editable/data-editable | false   | Whether the field is readyonly or not. By default, it's readonly. |
+
+```html
+
+```
 
 ## Development
 
