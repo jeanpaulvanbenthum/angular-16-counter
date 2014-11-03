@@ -1,19 +1,19 @@
-<div ng-controller='HomeCtrl'>	
+<div ng-controller='HomeCtrl'>
     <h2>Counter Directive</h2>
 
     <p>Use the plus/minus buttons to increment/decrement the value of the field.</p>
 
-
     <h3>Attributes:</h3>
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Attribute</th>
-                <th>Default</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>min/data-min</td>
                 <td>null</td>
@@ -44,14 +44,16 @@
                 <td>false</td>
                 <td>Whether the field is readyonly or not. By default, it's readonly.</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
 
     <h3>Counter 1</h3>
     <h4>Attributes used:</h4>
     <ul>
         <li>min: 0</li>
+        <li>addclass: col-xs-2</li>
     </ul>
     <div fs-counter value="value[0]" data-min="0" data-addclass="col-xs-2"></div>
 
@@ -62,6 +64,7 @@
         <li>min: 1</li>
         <li>max: 30</li>
         <li>step: 3</li>
+        <li>width: 50%</li>
         <li>editable</li>
     </ul>
     <div fs-counter value="value[1]" data-min="1" data-max="30" data-step="3" data-width="50%" data-editable></div>
@@ -73,6 +76,7 @@
         <li>min: 0</li>
         <li>max: 100</li>
         <li>step: 10</li>
+        <li>width: 130px</li>
     </ul>
     <div fs-counter value="value[2]" data-min="0" data-max="100" data-step="10" data-width="130px"></div>
 </div>

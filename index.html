@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <title>angular-counter</title>
 
@@ -10,8 +11,21 @@
 
 </head>
 <body>
-<div class="container container-fluid">
+<div class="container">
     <div ng-view></div>
+</div>
+<div class="footer">
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <p class="text-muted">&copy; 2014 Firestitch Inc.</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <p>Sources: <a href="http://maikeldaloo.com/post/angularjs-counter-directive">AngularJS Counter Directive</a>, <a href="http://jsbin.com/busuvu/2/edit?html,js">Chase Pursley</a></p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
