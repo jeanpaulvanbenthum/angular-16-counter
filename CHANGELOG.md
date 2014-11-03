@@ -4,6 +4,12 @@ Version numbers correspond to `bower.json` version
 
 ## Features
 
+- Initial release
+
 ## Bug Fixes
 
+- Initial release
+
 ## Breaking Changes
+
+- Initial release
