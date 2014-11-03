@@ -19,8 +19,8 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', function($rou
 	// var staticPath ='/';
 	var staticPath;
 	// staticPath ='/angular-directives/angular-counter/';		//local
-	staticPath ='/';		//nodejs (local)
-	// staticPath ='/angular-counter/';		//gh-pages
+	//staticPath ='/';		//nodejs (local)
+     staticPath ='/angular-counter/';		//gh-pages
 	var appPathRoute ='/';
 	var pagesPath =staticPath+'pages/';
 
