@@ -33,16 +33,12 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', [ functi
         replace: true,
         link: function(scope, element, attributes) {
             var max, min, setValue, step;
-            max = void 0;
-            min = void 0;
-            setValue = void 0;
-            step = void 0;
             if (angular.isUndefined(scope.value)) {
                 throw "Missing the value attribute on the counter directive.";
             }
             min = (angular.isUndefined(attributes.min) ? null : parseInt(attributes.min));
             max = (angular.isUndefined(attributes.max) ? null : parseInt(attributes.max));
-            step = (angular.isUndefined(attributes.step) ? 1 : parseInt(attributes.step));
+            step = (angular.isUndefined(attributes.step) || parseInt(attributes.step) === 0 ? 1 : parseInt(attributes.step));
             scope.readonly = (angular.isUndefined(attributes.editable) ? true : false);
             scope.addclass = (angular.isUndefined(attributes.addclass) ? null : attributes.addclass);
             scope.width = (angular.isUndefined(attributes.width) ? {} : {width:attributes.width});
