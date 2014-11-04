@@ -1,10 +1,15 @@
 {
     "name": "angular-counter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "authors": [
-        "Adam Merrifield <macagp@gmail.com>"
+        "Adam Merrifield <macagp@gmail.com> (http://adam.merrifield.ca)"
     ],
+    "main": "./counter.js",
     "description": "AngularJS directive for incrementing a counter form input field",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Firestitch/angular-counter.git"
+    },
     "keywords": [
         "angular",
         "AngularJS",
