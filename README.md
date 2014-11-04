@@ -15,7 +15,7 @@ See `bower.json` and `index.html` in the `gh-pages` branch for a full list / mor
 1. Install with bower:
     
     ```sh
-    bower install angular-counter`
+    bower install angular-counter
     ```
 
 2. Include `counter.min.js` or `counter.js` in your html.
