@@ -12,18 +12,32 @@ http://Firestitch.github.io/angular-counter/
 See `bower.json` and `index.html` in the `gh-pages` branch for a full list / more details
 
 ## Install
-1. download the files
-	1. Bower
-		1. add `"angular-counter": "latest"` to your `bower.json` file then run `bower install` OR run `bower install angular-counter`
-2. include the files in your app
-	1. `counter.min.js`
-	2. `counter.less` OR `counter.min.css` OR `counter.css`
-3. include the module in angular (i.e. in `app.js`) - `Firestitch.angular-counter`
+1. Install with bower:
+    
+    ```sh
+    bower install angular-counter`
+    ```
 
-See the `gh-pages` branch, files `bower.json` and `index.html` for a full example.
+2. Include `counter.min.js` or `counter.js` in your html.
+
+3. Include the module in angular (i.e. in `app.js`) - `Firestitch.angular-counter`
+
+    ```js
+    angular.module('myApp', [
+        'ngRoute',
+        'ngSanitize',
+        'ngTouch',
+        'ngAnimate',
+        ...
+        'Firestitch.angular-counter'
+    ])
+    ```
+
+1. See the `gh-pages` branch, files `bower.json` and `index.html` for a full example.
 
 
 ## Documentation
+
 See the `counter.js` file top comments for usage examples and documentation
 https://github.com/Firestitch/angular-counter/blob/master/counter.js
 
