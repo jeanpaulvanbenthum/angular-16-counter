@@ -1,6 +1,6 @@
 Version numbers correspond to `bower.json` version
 
-# 1.0.2
+# 1.0.3
 
 ## Cleanup
 
