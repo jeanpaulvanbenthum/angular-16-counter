@@ -33,11 +33,11 @@ partial / html:
 angular.module('Firestitch.angular-counter', []).directive('fsCounter', ['$timeout', function ($timeout) {
 
     return {
-        restrict: "A",
+        restrict: 'A',
         scope: {
-            value: "=value"
+            value: '=value'
         },
-        template: "<div class=\"fs-counter input-group\" ng-class=\"addclass\" ng-style=\"width\"><span class=\"input-group-btn\" ng-click=\"minus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-minus\"></span></button></span><input type=\"text\" class=\"form-control text-center\" ng-model=\"value\" ng-blur=\"blurred()\" ng-change=\"changed()\" ng-readonly=\"readonly\"><span class=\"input-group-btn\" ng-click=\"plus()\"><button class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span></button></span></div>",
+        template: '<div class="fs-counter input-group" ng-class="addclass" ng-style="width"><span class="input-group-btn" ng-click="minus()"><button class="btn btn-default"><span class="glyphicon glyphicon-minus"></span></button></span><input type="text" class="form-control text-center" ng-model="value" ng-blur="blurred()" ng-change="changed()" ng-readonly="readonly"><span class="input-group-btn" ng-click="plus()"><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></span></div>',
         replace: true,
         link: function(scope, element, attrs) {
             var min = (angular.isUndefined(attrs.min) ? void 0 : parseInt(attrs.min)),
@@ -63,7 +63,7 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', ['$timeo
                     }
                     return parsedVal;
                 } else {
-                    console.log("parsedValue must parse to a number.");
+                    console.log('parsedValue must parse to a number.');
                     parsedVal = min || 0;
                     return parsedVal;
                 }
@@ -73,7 +73,7 @@ angular.module('Firestitch.angular-counter', []).directive('fsCounter', ['$timeo
              * Confirm the value attribute exists on the element
              */
             if (angular.isUndefined(scope.value)) {
-                throw "Missing the value attribute on the counter directive.";
+                throw 'Missing the value attribute on the counter directive.';
             }
 
             /**
