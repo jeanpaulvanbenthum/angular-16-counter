@@ -11,7 +11,7 @@ http://Firestitch.github.io/angular-counter/
 
 See `bower.json` and `index.html` in the `gh-pages` branch for a full list / more details
 
-## Install
+## Install via bower
 1. Install with bower:
     
     ```sh
@@ -33,7 +33,30 @@ See `bower.json` and `index.html` in the `gh-pages` branch for a full list / mor
     ])
     ```
 
-1. See the `gh-pages` branch, files `bower.json` and `index.html` for a full example.
+4. See the `gh-pages` branch, files `bower.json` and `index.html` for a full example.
+
+
+## Install via npm
+1. Install with npm:
+    
+    ```sh
+    npm install Firestitch/angular-counter --save
+    ```
+
+2. Include the module in angular (i.e. in `app.js`) - `require(Firestitch.angular-counter)`
+
+    ```js
+    angular.module('myApp', [
+        require('angular-route'),
+        require('angular-sanitize'),
+        require('angular-touch'),
+        require('angular-animate'),
+        ...
+        require('Firestitch.angular-counter')
+    ])
+    ```
+
+3. Build with your bundler
 
 
 ## Documentation
