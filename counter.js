@@ -30,7 +30,7 @@ partial / html:
 
 'use strict';
 
-module.exports = 'Firestitch.angular-counter';
+// module.exports = 'Firestitch.angular-counter';
 
 angular.module('Firestitch.angular-counter', []).directive('fsCounter', ['$timeout', function ($timeout) {
 
